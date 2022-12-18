@@ -1,4 +1,9 @@
-export default function TTSbutton({optionText, optionClicked, correctness}){
+export default function TTSbutton({
+    optionText,
+    optionClicked,
+    correctness,
+    needTTS
+}){
 
     let msg = new SpeechSynthesisUtterance();
     let voices = window.speechSynthesis.getVoices();
@@ -17,12 +22,18 @@ export default function TTSbutton({optionText, optionClicked, correctness}){
 
     return(
         <>
-            <button onClick={() => optionClicked(correctness)} className='btn btn-outline-secondary pad'>
-                {optionText}
-            </button>
-            <button onClick={() => speakMsg(msg)} className="btn btn-outline-primary pad">
-                聽聽看
-            </button>
+            <div className="pad">
+                <button onClick={() => optionClicked(correctness)} className='btn btn-outline-secondary'>
+                    {optionText}
+                </button>
+            </div>
+            {needTTS && (
+                <div className="center">
+                <button onClick={() => speakMsg(msg)} className="btn btn-outline-primary">
+                    聽聽看
+                </button>
+            </div>
+            )}
         </>
     )
 };

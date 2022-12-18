@@ -2,32 +2,22 @@ import Video from "./Video";
 import TTSbutton from "./Text2Speech";
 import Score from "./Score";
 import { Typography } from "@mui/material";
-import { useState } from "react";
-import QuestionList from "../../skeleton_videos/QuestionList";
 
-export default function Game({title, setShowResult}){
-    const [score, setScore] = useState(0);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-
-    const questions = QuestionList;
-    const optionClicked = (isCorrect) => {
-        console.log('clicked');
-        console.log(isCorrect);
-        console.log(questions.length);
-        if (isCorrect) {
-            setScore(score + 1);
-            if (currentQuestion + 1 < questions.length) {
-                setCurrentQuestion(currentQuestion + 1);
-            } else {
-                setShowResult(true);
-            }
-        } 
-    };
+export default function Game({
+    title,
+    score, 
+    currentQuestion,
+    optionClicked,
+    questions,
+    isAlertVisible,
+    Correctness,
+    needTTS
+}){
     return(
         <>
             <div className="container-xl">
                 <div className="row">
-                    <div className="col-10">
+                    <div className="col-11">
                         <Typography className="center" gutterBottom>{title}</Typography>
                         <Typography className="center" gutterBottom>第{currentQuestion+1}題</Typography>
                         <div className="container-lg center gutter">
@@ -42,15 +32,18 @@ export default function Game({title, setShowResult}){
                                                 key={option.option_id}
                                                 optionClicked={optionClicked} 
                                                 correctness={option.isCorrect}
-                                                optionText={option.text} />
+                                                optionText={option.text}
+                                                needTTS={needTTS}
+                                            />
                                         </div>
-                                    )
+                                       )
                                 })}
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col">
                         <Score currentScore={score} />
+                        {isAlertVisible && (Correctness ? "答對了！" : "答錯了！")}
                     </div>
                 </div>
             </div>

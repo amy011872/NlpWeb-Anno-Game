@@ -22,5 +22,13 @@
 
 .pad {
     padding-top: 15px;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
+}
+
+.res-card {
+    padding: 30px;
+    background-color: #2f546d;
+    color: white;
+    width: 50%;
+    border-radius: 2em;
 }

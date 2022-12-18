@@ -1,14 +1,59 @@
 import './App.css';
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import Game from "./components/game/Game";
 import About from "./components/About";
 import Result from './components/game/Result';
+import QuestionList from "./skeleton_videos/QuestionList";
+import QuestionList2 from "./skeleton_videos/QuestionList2";
 
 function App() {
   const [showResult, setShowResult] = useState(false);
+  const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isAlertVisible, setIsAlertVisible ] = useState(false);
+  const [Correctness, setCorrectness] = useState(true);
+
+  let navigate = useNavigate(); 
+  const questions = QuestionList;
+  const questions2 = QuestionList2;
+  const optionClicked = (isCorrect) => {
+      console.log('clicked');
+      console.log(isCorrect);
+      if (isCorrect) {
+          setScore(score + 1);
+          setCorrectness(true);
+      } else {
+        setCorrectness(false);
+      }
+      if (currentQuestion + 1 < questions.length) {
+        setCurrentQuestion(currentQuestion + 1);
+       } else {
+        setShowResult(true);
+    }
+    setIsAlertVisible(true);
+    setTimeout(() => {
+            setIsAlertVisible(false);
+          }, 500);
+  };
+
+  const nextLevel = () => {
+    setScore(0);
+    setCurrentQuestion(0);
+    setShowResult(false);
+    console.log('To the next level!');
+    let path = `/Game2`; 
+    navigate(path);
+  }
+
+  const restartGame = () => {
+    console.log('restart');
+    setScore(0);
+    setCurrentQuestion(0);
+    setShowResult(false);
+  }
 
   return (
     <>
@@ -22,14 +67,60 @@ function App() {
               <>
                 { showResult ? (
                   <div>
-                    <Result />
+                    <Result
+                      congrats={'恭喜完成第一關挑戰！'}
+                      currentScore={score}
+                      questions={questions}
+                      nextLevel={nextLevel}
+                      restartGame={restartGame}
+                    />
                   </div>
                 ) : (
                   <div className='row'>
                     <div className='col-10'>
                       <Game 
-                        title={'＿＿＿＿＿ 第一關：猜猜我說了什麼？ ＿＿＿＿＿'}
-                        setShowResult={setShowResult}
+                        title={'＿＿＿＿＿ 第一關(warmup)：猜猜我說了什麼？ ＿＿＿＿＿'}
+                        optionClicked={optionClicked}
+                        score={score}
+                        currentQuestion={currentQuestion}
+                        questions={questions}
+                        Correctness={Correctness}
+                        isAlertVisible={isAlertVisible}
+                        needTTS={true}
+                      />
+                    </div>
+                  </div>
+                )
+                }
+              </>
+            }
+          />
+          <Route 
+            path="/Game2"
+            element={
+              <>
+                { showResult ? (
+                  <div>
+                    <Result
+                      congrats={'恭喜完成第二關挑戰！'}
+                      currentScore={score}
+                      questions={questions2}
+                      nextLevel={nextLevel}
+                      restartGame={restartGame}
+                    />
+                  </div>
+                ) : (
+                  <div className='row'>
+                    <div className='col-10'>
+                      <Game 
+                        title={'＿＿＿＿＿ 第二關：猜猜我是誰？ ＿＿＿＿＿'}
+                        optionClicked={optionClicked}
+                        score={score}
+                        currentQuestion={currentQuestion}
+                        questions={questions2}
+                        Correctness={Correctness}
+                        isAlertVisible={isAlertVisible}
+                        needTTS={false}
                       />
                     </div>
                   </div>

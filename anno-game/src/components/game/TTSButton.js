@@ -15,17 +15,7 @@ export default function TTSButton({optionText}) {
         console.log(optionText);
         synth.speak(msg);
       };
-/*
-    function speakNow() {
-        const message = new SpeechSynthesisUtterance(optionText);
-        let voices = window.speechSynthesis.getVoices();
-        message.voice = voices[10]; 
-        message.lang = "zh";
-        speechSynthesis.speak(message);
-        console.log('wrong again qq')
-       }
-*/
-    
+
     return(
         <>
             <div className="center">

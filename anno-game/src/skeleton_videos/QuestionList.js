@@ -1,9 +1,13 @@
 import ma from "./ma.mp4";
 import fei_01 from "./fei_01.mp4";
 import fei_02 from "./fei_02.mp4";
+import kao_02 from "./kao_02.mp4";
+import jiang_02 from "./jiang_02.mp4";
 import ma_origin from "./ma_original.mp4"
 import fei01_origin from "./fei_01_original.mp4"
 import fei02_origin from "./fei_02_original.mp4"
+import kao02_origin from "./kao_02_original.mp4"
+import jiang02_origin from "./jiang_02_original.mp4"
 
 const QuestionList = [
     {
@@ -44,7 +48,33 @@ const QuestionList = [
             { option_id: 3, text:'街道上充滿了快樂的人群，大家都出來曬曬冬天的暖陽，終於揮別了台北綿綿的陰雨天。', isCorrect: false },
             
         ]
-    }
+    },
+    {
+        id: 4,
+        text: '還卡在第二年的進度，那我想請教一下未來三年我們是要飛的，才能夠快速地飛完這所有後面的時程嗎?請教一下主委。',
+        speaker: '高虹安',
+        video: kao_02,
+        origin: kao02_origin,
+        options: [
+            { option_id: 1, text:'那尊佛像一直好端端在那，怎麼會突然就不見了？一定是有人在背後動了手腳。', isCorrect: false },
+            { option_id: 2, text:'還卡在第二年的進度，那我想請教一下未來三年我們是要飛的，才能夠快速地飛完這所有後面的時程嗎?請教一下主委。', isCorrect: true },
+            { option_id: 3, text:'', isCorrect: false },
+            
+        ]
+    },
+    {
+        id: 5,
+        text: '四次大停電，台電要了多少錢，納稅人的辛苦錢，為什麼？用到哪邊去？一事無成！',
+        speaker: '蔣萬安',
+        video: jiang_02,
+        origin: jiang02_origin,
+        options: [
+            { option_id: 1, text:'這家店的羅宋湯跟煎餃非常好吃，非常非常推！位在和平東路二段上。', isCorrect: false },
+            { option_id: 2, text:'振奮人心！令人萬分感動的一場比賽！現場和電視機前的觀眾都看到說不出話來！', isCorrect: false },
+            { option_id: 3, text:'四次大停電，台電要了多少錢，納稅人的辛苦錢，為什麼？用到哪邊去？一事無成！', isCorrect: true },
+            
+        ]
+    },
 ]
 
 export default QuestionList;

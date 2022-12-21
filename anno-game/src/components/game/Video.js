@@ -1,9 +1,8 @@
-import MaVideo from "../../skeleton_videos/ma.mp4";
 
-export default function Video() {
+export default function Video({filename}) {
     return (
-      <video controls width="40%" >
-        <source src={MaVideo} type="video/mp4"
+      <video controls width="55%" className="pad-little">
+        <source src={filename} type="video/mp4"
         />
       </video>
     );

@@ -15,6 +15,7 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isAlertVisible, setIsAlertVisible ] = useState(false);
   const [Correctness, setCorrectness] = useState(true);
+  const [isHintVisible, setHintVisible] = useState(false);
 
   let navigate = useNavigate(); 
   const questions = QuestionList;
@@ -22,6 +23,7 @@ function App() {
   const optionClicked = (isCorrect) => {
       console.log('clicked');
       console.log(isCorrect);
+      console.log(questions[currentQuestion].video);
       if (isCorrect) {
           setScore(score + 1);
           setCorrectness(true);
@@ -39,6 +41,36 @@ function App() {
           }, 500);
   };
 
+  const optionClickedHint = (isCorrect) => {
+      console.log('clicked');
+      console.log(isCorrect);
+      console.log(currentQuestion);
+      // If correct, score + 1 and go to the next question
+      if (isCorrect) {
+          setScore(score + 1);
+          setCorrectness(true);
+          setHintVisible(false);
+          if (currentQuestion + 1 < questions.length) {
+            setCurrentQuestion(currentQuestion + 1);
+           } else {
+            setShowResult(true);
+        }
+      // If incorrect, ask if the player wants a hint
+      } else {
+        setCorrectness(false);
+        setHintVisible(true);
+      }
+    setIsAlertVisible(true);
+    setTimeout(() => {
+            setIsAlertVisible(false);
+          }, 500);
+  };
+
+  const handleSkip = () => {
+    setHintVisible(false);
+    setCurrentQuestion(currentQuestion + 1);
+}
+
   const nextLevel = () => {
     setScore(0);
     setCurrentQuestion(0);
@@ -54,6 +86,19 @@ function App() {
     setCurrentQuestion(0);
     setShowResult(false);
   }
+  
+  const speakMsg = (optionText) => {
+    let msg = new SpeechSynthesisUtterance();
+    let voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[10]; 
+    msg.volume = 1; // From 0 to 1
+    msg.rate = 1; // From 0.1 to 10
+    msg.pitch = 2; // From 0 to 2
+    msg.lang = 'zh';
+    msg.text = optionText;
+    console.log(optionText);
+    window.speechSynthesis.speak(msg);
+  };
 
   return (
     <>
@@ -79,7 +124,7 @@ function App() {
                   <div className='row'>
                     <div className='col-10'>
                       <Game 
-                        title={'＿＿＿＿＿ 第一關(warmup)：猜猜我說了什麼？ ＿＿＿＿＿'}
+                        title={' 第一關(warmup)：猜猜我在說什麼？ '}
                         optionClicked={optionClicked}
                         score={score}
                         currentQuestion={currentQuestion}
@@ -87,6 +132,8 @@ function App() {
                         Correctness={Correctness}
                         isAlertVisible={isAlertVisible}
                         needTTS={true}
+                        speakMsg={speakMsg}
+                        nCol={"col-4"}
                       />
                     </div>
                   </div>
@@ -113,14 +160,17 @@ function App() {
                   <div className='row'>
                     <div className='col-10'>
                       <Game 
-                        title={'＿＿＿＿＿ 第二關：猜猜我是誰？ ＿＿＿＿＿'}
-                        optionClicked={optionClicked}
+                        title={' 第二關：猜猜我是誰？ '}
+                        optionClicked={optionClickedHint}
                         score={score}
                         currentQuestion={currentQuestion}
                         questions={questions2}
                         Correctness={Correctness}
                         isAlertVisible={isAlertVisible}
+                        isHintVisible={isHintVisible}
                         needTTS={false}
+                        handleSkip={handleSkip}
+                        nCol={"col-3"}
                       />
                     </div>
                   </div>

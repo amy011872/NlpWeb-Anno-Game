@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 
 export default function Game({
     title,
-    score, 
+    score,
     currentQuestion,
     optionClicked,
     questions,
@@ -30,7 +30,9 @@ export default function Game({
                         <Typography variant="h6" className="center" gutterBottom>—第{currentQuestion + 1}題—</Typography>
                         <Score currentScore={score} />
                         <div className="container-xl center">
-                            <Video filename={questions[currentQuestion].video} />
+                            <Video
+                              filename={questions[currentQuestion].video}
+                            />
                         </div>
                         <div className="container-xl pad">
                             <div className="row">

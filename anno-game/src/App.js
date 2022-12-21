@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Game from "./components/game/Game";
 import About from "./components/About";
 import Result from './components/game/Result';
+import End from "./components/game/End";
 import QuestionList from "./skeleton_videos/QuestionList";
 import QuestionList2 from "./skeleton_videos/QuestionList2";
 
@@ -20,6 +21,7 @@ function App() {
   let navigate = useNavigate(); 
   const questions = QuestionList;
   const questions2 = QuestionList2;
+
   const optionClicked = (isCorrect) => {
       console.log('clicked');
       console.log(isCorrect);
@@ -38,7 +40,7 @@ function App() {
     setIsAlertVisible(true);
     setTimeout(() => {
             setIsAlertVisible(false);
-          }, 500);
+          }, 1500);
   };
 
   const optionClickedHint = (isCorrect) => {
@@ -63,7 +65,7 @@ function App() {
     setIsAlertVisible(true);
     setTimeout(() => {
             setIsAlertVisible(false);
-          }, 500);
+          }, 1500);
   };
 
   const handleSkip = () => {
@@ -77,6 +79,12 @@ function App() {
     setShowResult(false);
     console.log('To the next level!');
     let path = `/Game2`; 
+    navigate(path);
+  }
+
+  const showVideos = () => {
+    console.log('End and show videos');
+    let path = `/End`; 
     navigate(path);
   }
 
@@ -105,6 +113,7 @@ function App() {
                       questions={questions}
                       nextLevel={nextLevel}
                       restartGame={restartGame}
+                      levelup={'前進下一關'}
                     />
                   </div>
                 ) : (
@@ -138,8 +147,9 @@ function App() {
                       congrats={'恭喜完成第二關挑戰！'}
                       currentScore={score}
                       questions={questions2}
-                      nextLevel={nextLevel}
+                      nextLevel={showVideos}
                       restartGame={restartGame}
+                      levelup={'揭曉影片原檔'}
                     />
                   </div>
                 ) : (
@@ -166,6 +176,11 @@ function App() {
               </>
             }
           />
+          <Route path="/End" element={
+                                <End 
+                                  currentQuestion={currentQuestion}
+                                  questions={questions}
+                                />} />
           <Route path="/About" element={<About />} />
         </Routes>
      </div>

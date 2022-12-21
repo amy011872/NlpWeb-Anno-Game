@@ -6,7 +6,8 @@ export default function Result({
     questions,
     nextLevel,
     restartGame,
-    congrats
+    congrats,
+    levelup
 }) {
     return (
         <>
@@ -20,7 +21,7 @@ export default function Result({
                     </div>
                     <div className="container">
                         {currentScore > (questions.length/2) ? <Typography variant="h5" className="center pad">{congrats}</Typography> 
-                        : <Typography variant="h5" className="center pad">你的分數太低不能進到下一關。再次挑戰？</Typography>}
+                        : <Typography variant="h5" className="center pad">你的分數太低了，不能進到下一關。再次挑戰？</Typography>}
                     </div>
                     <div className="container center">
                         {currentScore > (questions.length/2) ? (
@@ -28,7 +29,7 @@ export default function Result({
                             className="btn btn-secondary"
                             onClick={nextLevel}
                         >
-                            前進下一關
+                            {levelup}
                         </button>
                         ):(
                             <button 
@@ -49,7 +50,7 @@ export default function Result({
 
 Result.propTypes = {
     nextLevel: PropTypes.func.isRequired,
-    reStart: PropTypes.func.isRequired,
+    restartGame: PropTypes.func.isRequired,
     currentScore: PropTypes.number.isRequired,
     questions: PropTypes.array.isRequired
 }

@@ -21,9 +21,9 @@ const QuestionList = [
         speaker: '費鴻泰',
         video: fei_01,
         options: [
-            { option_id: 1, text:'帶領台灣人民。', isCorrect: false },
-            { option_id: 2, text:'我跟你講吼,你不講實話,今年一年時間我一定會拜託曾名中委員等等。', isCorrect: true },
-            { option_id: 3, text:'我蓄積更大的領台灣人民。', isCorrect: false },
+            { option_id: 1, text:'我承諾大家，我一定會做到，在我的任期四年內一定讓大家看到成果。', isCorrect: false },
+            { option_id: 2, text:'我跟你講吼，你不講實話，今年一年時間我一定會拜託委員等等來處理。', isCorrect: true },
+            { option_id: 3, text:'大家都給我注意一點，尤其是你吼，不要再讓我抓到小把柄。', isCorrect: false },
             
         ]
     },
@@ -33,9 +33,9 @@ const QuestionList = [
         speaker:  '費鴻泰',
         video: fei_02,
         options: [
-            { option_id: 1, text:'蓄積更大人民。', isCorrect: false },
-            { option_id: 2, text:'我們開秘密會議都給你查清楚!不要在這邊給我混!混!混了今天也混不到下個禮拜。再要請教一下...', isCorrect: true },
-            { option_id: 3, text:'我蓄積領台灣人民。', isCorrect: false },
+            { option_id: 1, text:'那邊那位太太，不要想插隊！我們在文明的都市裡日常採購，不要壞了這份共識。', isCorrect: false },
+            { option_id: 2, text:'我們開秘密會議都給你查清楚！不要在這邊給我混！混！混了今天也混不到下個禮拜。', isCorrect: true },
+            { option_id: 3, text:'街道上充滿了快樂的人群，大家都出來曬曬冬天的暖陽，終於揮別了台北綿綿的陰雨天。', isCorrect: false },
             
         ]
     }

@@ -19,11 +19,11 @@ export default function Result({
                         <Typography variant="h5" className="center pad">Your score: {currentScore} ({currentScore/questions.length*100}%)</Typography>
                     </div>
                     <div className="container">
-                        {currentScore > 2 ? <Typography variant="h5" className="center pad">{congrats}</Typography> 
-                        : <Typography variant="h5" className="center pad">你的分數太低了，不能進到下一關。再次挑戰？</Typography>}
+                        {currentScore > (questions.length/2) ? <Typography variant="h5" className="center pad">{congrats}</Typography> 
+                        : <Typography variant="h5" className="center pad">你的分數太低不能進到下一關。再次挑戰？</Typography>}
                     </div>
                     <div className="container center">
-                        {currentScore > 2 ? (
+                        {currentScore > (questions.length/2) ? (
                             <button 
                             className="btn btn-secondary"
                             onClick={nextLevel}

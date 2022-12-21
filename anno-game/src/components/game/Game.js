@@ -1,6 +1,7 @@
 import Video from "./Video";
 import Score from "./Score";
 import Hint from "./Hint";
+import TTSButton from "./TTSButton";
 import AOS from 'aos';
 import { Typography } from "@mui/material";
 
@@ -12,11 +13,11 @@ export default function Game({
     questions,
     isAlertVisible,
     Correctness,
-    speakMsg,
     needTTS,
     isHintVisible,
     handleSkip,
-    nCol
+    nCol,
+    closePopup
 }){
     AOS.init();
     return(
@@ -26,10 +27,10 @@ export default function Game({
                     <div className="col-2"></div>
                     <div className="col">
                         <Typography variant="h5" className="center" gutterBottom>{title}</Typography>
-                        <Typography variant="h6" className="center" gutterBottom>－－第{currentQuestion+1}題－－</Typography>
+                        <Typography variant="h6" className="center" gutterBottom>—第{currentQuestion + 1}題—</Typography>
                         <Score currentScore={score} />
                         <div className="container-xl center">
-                                {Correctness && <Video filename={questions[currentQuestion].video} />}
+                            <Video filename={questions[currentQuestion].video} />
                         </div>
                         <div className="container-xl pad">
                             <div className="row">
@@ -47,13 +48,7 @@ export default function Game({
                                                     {option.text}
                                                 </button>
                                             </div>
-                                            {needTTS && (
-                                                <div className="center">
-                                                    <button onClick={() => speakMsg(option.text)} className="btn btn-dark">
-                                                        聽聽看
-                                                    </button>
-                                                </div>
-                                            )}
+                                            {needTTS && <TTSButton optionText={option.text}/>}
                                         </div>
                                     )
                                 })}
@@ -68,6 +63,7 @@ export default function Game({
                                 data-aos="fade-up"
                                 text={questions[currentQuestion].text}
                                 handleSkip={handleSkip}
+                                closePopup={closePopup}
                             />}
                     </div>
                 </div>

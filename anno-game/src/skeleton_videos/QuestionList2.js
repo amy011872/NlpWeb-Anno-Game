@@ -3,6 +3,7 @@ import fei_01 from "./fei_01.mp4";
 import fei_02 from "./fei_02.mp4";
 import kao_02 from "./kao_02.mp4";
 import jiang_02 from "./jiang_02.mp4";
+import tsai_01 from "./tsai_01.mp4";
 
 const QuestionList2 = [
     {
@@ -67,6 +68,19 @@ const QuestionList2 = [
             { option_id: 2, text:'郭台銘', isCorrect: false },
             { option_id: 3, text:'黃偉哲', isCorrect: false },
             { option_id: 4, text:'蔣萬安', isCorrect: true },
+            
+        ]
+    },
+    {
+        id: 6,
+        text: '就變成是說，你如果說，要讓我們的公營機構能朝商業化而且是有效經營的話，你必須要頂選最好的人才，但是這些人才未必是在立法院答詢裡面最好的人才。',
+        speaker: '蔡英文',
+        video: tsai_01,
+        options: [
+            { option_id: 1, text:'陳時中', isCorrect: false },
+            { option_id: 2, text:'郭台銘', isCorrect: false },
+            { option_id: 3, text:'黃偉哲', isCorrect: false },
+            { option_id: 4, text:'蔡英文', isCorrect: true },
             
         ]
     }

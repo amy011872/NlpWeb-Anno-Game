@@ -3,11 +3,13 @@ import fei_01 from "./fei_01.mp4";
 import fei_02 from "./fei_02.mp4";
 import kao_02 from "./kao_02.mp4";
 import jiang_02 from "./jiang_02.mp4";
+import tsai_01 from "./tsai_01.mp4";
 import ma_origin from "./ma_original.mp4"
 import fei01_origin from "./fei_01_original.mp4"
 import fei02_origin from "./fei_02_original.mp4"
 import kao02_origin from "./kao_02_original.mp4"
 import jiang02_origin from "./jiang_02_original.mp4"
+import tsai01_origin from "./tsai_01_original.mp4"
 
 const QuestionList = [
     {
@@ -72,6 +74,19 @@ const QuestionList = [
             { option_id: 1, text:'這家店的羅宋湯跟煎餃非常好吃，非常非常推！位在和平東路二段上。', isCorrect: false },
             { option_id: 2, text:'振奮人心！令人萬分感動的一場比賽！現場和電視機前的觀眾都看到說不出話來！', isCorrect: false },
             { option_id: 3, text:'四次大停電，台電要了多少錢，納稅人的辛苦錢，為什麼？用到哪邊去？一事無成！', isCorrect: true },
+            
+        ]
+    },
+    {
+        id: 6,
+        text: '就變成是說，你如果說，要讓我們的公營機構能朝商業化而且是有效經營的話，你必須要頂選最好的人才，但是這些人才未必是在立法院答詢裡面最好的人才。',
+        speaker: '蔡英文',
+        video: tsai_01,
+        origin: tsai01_origin,
+        options: [
+            { option_id: 1, text:'這家店的羅宋湯跟煎餃非常好吃，非常非常推！位在和平東路二段上。', isCorrect: false },
+            { option_id: 2, text:'振奮人心！令人萬分感動的一場比賽！現場和電視機前的觀眾都看到說不出話來！', isCorrect: false },
+            { option_id: 3, text:'就變成是說，你如果說，要讓我們的公營機構能朝商業化而且是有效經營的話，你必須要頂選最好的人才，但是這些人才未必是在立法院答詢裡面最好的人才。', isCorrect: true },
             
         ]
     },

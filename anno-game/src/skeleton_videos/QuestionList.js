@@ -60,7 +60,7 @@ const QuestionList = [
         options: [
             { option_id: 1, text:'那尊佛像一直好端端在那，怎麼會突然就不見了？一定是有人在背後動了手腳。', isCorrect: false },
             { option_id: 2, text:'還卡在第二年的進度，那我想請教一下未來三年我們是要飛的，才能夠快速地飛完這所有後面的時程嗎?請教一下主委。', isCorrect: true },
-            { option_id: 3, text:'', isCorrect: false },
+            { option_id: 3, text:'我今天要說的就是！你需要對市政府的運作負責，確保市長能夠有效地執行其職責齁。', isCorrect: false },
             
         ]
     },
@@ -84,8 +84,8 @@ const QuestionList = [
         video: tsai_01,
         origin: tsai01_origin,
         options: [
-            { option_id: 1, text:'這家店的羅宋湯跟煎餃非常好吃，非常非常推！位在和平東路二段上。', isCorrect: false },
-            { option_id: 2, text:'振奮人心！令人萬分感動的一場比賽！現場和電視機前的觀眾都看到說不出話來！', isCorrect: false },
+            { option_id: 1, text:'身為國家的代表，需要與其他國家的領導人溝通，難道還需要我們教嗎？', isCorrect: false },
+            { option_id: 2, text:'針對的這個問題，通常情况下，新冠肺炎疫苗的風險比較小，且大多數人在接種疫苗後都沒有出現嚴重不良反應。', isCorrect: false },
             { option_id: 3, text:'就變成是說，你如果說，要讓我們的公營機構能朝商業化而且是有效經營的話，你必須要頂選最好的人才，但是這些人才未必是在立法院答詢裡面最好的人才。', isCorrect: true },
             
         ]

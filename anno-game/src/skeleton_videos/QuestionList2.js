@@ -77,9 +77,9 @@ const QuestionList2 = [
         speaker: '蔡英文',
         video: tsai_01,
         options: [
-            { option_id: 1, text:'陳時中', isCorrect: false },
-            { option_id: 2, text:'郭台銘', isCorrect: false },
-            { option_id: 3, text:'黃偉哲', isCorrect: false },
+            { option_id: 1, text:'蘇貞昌', isCorrect: false },
+            { option_id: 2, text:'周美青', isCorrect: false },
+            { option_id: 3, text:'陳其邁', isCorrect: false },
             { option_id: 4, text:'蔡英文', isCorrect: true },
             
         ]

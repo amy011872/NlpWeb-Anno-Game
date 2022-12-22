@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/NlpWeb-Anno-Game/static/css/main.fc5b038f.css",
-    "main.js": "/NlpWeb-Anno-Game/static/js/main.01882ad7.js",
+    "main.js": "/NlpWeb-Anno-Game/static/js/main.c8f9c6ec.js",
     "static/js/787.53ca9957.chunk.js": "/NlpWeb-Anno-Game/static/js/787.53ca9957.chunk.js",
     "static/media/jiang_02_original.mp4": "/NlpWeb-Anno-Game/static/media/jiang_02_original.d363988175ef300f8ca2.mp4",
+    "static/media/about-2.png": "/NlpWeb-Anno-Game/static/media/about-2.0414e4561e2f7c971d21.png",
     "static/media/kao_02_original.mp4": "/NlpWeb-Anno-Game/static/media/kao_02_original.6680f856449cdfbb4b37.mp4",
     "static/media/ma.mp4": "/NlpWeb-Anno-Game/static/media/ma.b59e9bdb587c6090ce1b.mp4",
     "static/media/fei_02.mp4": "/NlpWeb-Anno-Game/static/media/fei_02.fdc6a67588e2285a8730.mp4",
@@ -12,14 +13,16 @@
     "static/media/jiang_02.mp4": "/NlpWeb-Anno-Game/static/media/jiang_02.7a78f6eeea0209e419ad.mp4",
     "static/media/fei_02_original.mp4": "/NlpWeb-Anno-Game/static/media/fei_02_original.3fd09a24c3144cb5938e.mp4",
     "static/media/kao_02.mp4": "/NlpWeb-Anno-Game/static/media/kao_02.32e7f20e4f30448ef280.mp4",
+    "static/media/tsai_01_original.mp4": "/NlpWeb-Anno-Game/static/media/tsai_01_original.c4d3f0cf0911cc564ccf.mp4",
     "static/media/ma_original.mp4": "/NlpWeb-Anno-Game/static/media/ma_original.343ee9b50c374a78459e.mp4",
+    "static/media/tsai_01.mp4": "/NlpWeb-Anno-Game/static/media/tsai_01.4dbccb4562b9fd166866.mp4",
     "index.html": "/NlpWeb-Anno-Game/index.html",
     "main.fc5b038f.css.map": "/NlpWeb-Anno-Game/static/css/main.fc5b038f.css.map",
-    "main.01882ad7.js.map": "/NlpWeb-Anno-Game/static/js/main.01882ad7.js.map",
+    "main.c8f9c6ec.js.map": "/NlpWeb-Anno-Game/static/js/main.c8f9c6ec.js.map",
     "787.53ca9957.chunk.js.map": "/NlpWeb-Anno-Game/static/js/787.53ca9957.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc5b038f.css",
-    "static/js/main.01882ad7.js"
+    "static/js/main.c8f9c6ec.js"
   ]
 }
